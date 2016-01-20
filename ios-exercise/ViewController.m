@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 60, 320, 180)];
+    //修改代码注释
     [imgView sd_setImageWithURL:[NSURL URLWithString:@"http://ww1.sinaimg.cn/bmiddle/005vimW9gw1f05tjnz94ij30b40b4jrn.jpg"]
                placeholderImage:[UIImage imageNamed:@"fastcat"]
                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
