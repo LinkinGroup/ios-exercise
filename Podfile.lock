@@ -14,16 +14,22 @@ PODS:
   - AFNetworking/Serialization (3.0.4)
   - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
+  - FlatUIKit (1.6.2)
+  - MaterialControls (1.0.2)
   - SDWebImage (3.7.4):
     - SDWebImage/Core (= 3.7.4)
   - SDWebImage/Core (3.7.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
+  - FlatUIKit (~> 1.6.2)
+  - MaterialControls (~> 1.0.2)
   - SDWebImage (~> 3.7.4)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
+  MaterialControls: bdeeb94aa049b73f70739a5514be137d2d45c08a
   SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
 
 COCOAPODS: 0.39.0

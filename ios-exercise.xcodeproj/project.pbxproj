@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A87DEC02D4A9D0079C45DDA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 665741317D163FBB10FD210D /* libPods.a */; };
+		3BB39EA51C528ECE0076DE5D /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB39EA41C528ECE0076DE5D /* Login.xib */; };
+		3BB39EA81C529ABF0076DE5D /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB39EA71C529ABF0076DE5D /* Common.m */; };
 		3BF1F9851C500E3C00855397 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1F9841C500E3C00855397 /* main.m */; };
 		3BF1F9881C500E3C00855397 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1F9871C500E3C00855397 /* AppDelegate.m */; };
 		3BF1F98B1C500E3C00855397 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1F98A1C500E3C00855397 /* ViewController.m */; };
@@ -19,6 +21,10 @@
 /* Begin PBXFileReference section */
 		2C20D7A129EC65E703EE2D75 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		37565470B69BCFCF1476A3AB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3BB39EA41C528ECE0076DE5D /* Login.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
+		3BB39EA61C529ABF0076DE5D /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		3BB39EA71C529ABF0076DE5D /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		3BB39EA91C529B630076DE5D /* ios-exercise.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-exercise.pch"; sourceTree = "<group>"; };
 		3BF1F9801C500E3C00855397 /* ios-exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-exercise.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF1F9841C500E3C00855397 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BF1F9861C500E3C00855397 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +80,9 @@
 				3BF1F9911C500E3C00855397 /* LaunchScreen.storyboard */,
 				3BF1F9941C500E3C00855397 /* Info.plist */,
 				3BF1F9831C500E3C00855397 /* Supporting Files */,
+				3BB39EA41C528ECE0076DE5D /* Login.xib */,
+				3BB39EA61C529ABF0076DE5D /* Common.h */,
+				3BB39EA71C529ABF0076DE5D /* Common.m */,
 			);
 			path = "ios-exercise";
 			sourceTree = "<group>";
@@ -82,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				3BF1F9841C500E3C00855397 /* main.m */,
+				3BB39EA91C529B630076DE5D /* ios-exercise.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -167,6 +177,7 @@
 				3BF1F9931C500E3C00855397 /* LaunchScreen.storyboard in Resources */,
 				3BF1F9901C500E3C00855397 /* Assets.xcassets in Resources */,
 				3BF1F98E1C500E3C00855397 /* Main.storyboard in Resources */,
+				3BB39EA51C528ECE0076DE5D /* Login.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB39EA81C529ABF0076DE5D /* Common.m in Sources */,
 				3BF1F98B1C500E3C00855397 /* ViewController.m in Sources */,
 				3BF1F9881C500E3C00855397 /* AppDelegate.m in Sources */,
 				3BF1F9851C500E3C00855397 /* main.m in Sources */,

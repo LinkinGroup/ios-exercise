@@ -1,0 +1,16 @@
+//
+//  ios-exercise.pch
+//  ios-exercise
+//
+//  Created by 郑博辰 on 16/1/23.
+//  Copyright © 2016年 com.link. All rights reserved.
+//
+
+#ifndef ios_exercise_pch
+#define ios_exercise_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Common.h"
+#endif /* ios_exercise_pch */
