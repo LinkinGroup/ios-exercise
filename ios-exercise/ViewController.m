@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //Add MDButton
     MDButton *button = [[MDButton alloc] initWithFrame:CGRectMake(0, 260, 180, 40) type:Flat rippleColor:HEXCOLOR(0xffffff)];
     [button setTitle:@"Stephen" forState:UIControlStateNormal];
     [button setBackgroundColor:HEXCOLOR(0x32B5C5)];
