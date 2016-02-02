@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lIc-SR-ANO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6wK-US-iJX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Hero View Controller-->
+        <!--League of Legends-->
         <scene sceneID="UOz-ck-tAH">
             <objects>
                 <tableViewController id="lIc-SR-ANO" customClass="LINKHeroViewController" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BON-7O-J8u">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BON-7O-J8u" id="GS0-9l-8Te">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -28,10 +28,11 @@
                             <outlet property="delegate" destination="lIc-SR-ANO" id="DUG-bi-Nlp"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="League of Legends" id="e06-4c-0cb"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEM-f2-aKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="163"/>
+            <point key="canvasLocation" x="1215" y="6"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -67,7 +68,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-160.5" y="112.5"/>
+            <point key="canvasLocation" x="-178.5" y="24.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F5X-fE-iyB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6wK-US-iJX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GkL-fX-NBV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.36862745099999999" green="0.10980392160000001" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lIc-SR-ANO" kind="relationship" relationship="rootViewController" id="pUs-E1-Lv2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCk-fk-H4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="403" y="6"/>
         </scene>
     </scenes>
 </document>

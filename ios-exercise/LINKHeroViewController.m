@@ -8,48 +8,61 @@
 
 #import "LINKHeroViewController.h"
 #import "LINKHero.h"
+#import "MJRefresh.h"
+#import "LINKHerosStore.h"
 
 @interface LINKHeroViewController ()
 
 /** Model Group*/
-@property (nonatomic, strong) NSArray *heros;
-
+@property (nonatomic, strong) NSMutableArray *heros;
+@property (nonatomic, assign) NSInteger pageIndex;
 
 @end
 
 @implementation LINKHeroViewController
 
-- (NSArray *)heros
-{
-    if (_heros == nil)
-    {
-        NSString *file = [[NSBundle mainBundle]pathForResource:@"heroes.plist"ofType:nil] ;
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:file];
-        
-        NSMutableArray *heros = [[NSMutableArray alloc] init];
-        
-        for (NSDictionary *dict in dictArray) {
-            LINKHero *hero =[LINKHero heroWithDict:dict];
-            [heros addObject:hero];
-        }
-        _heros = heros;
-    }
-    return _heros;
-}
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.pageIndex = 0;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 45;
-
-    }
-
-
-
+    self.tableView.rowHeight = 70;
+    
+    _heros = [NSMutableArray arrayWithArray:[[LINKHerosStore sharedInstance] fetchPage:self.pageIndex size:REQ_PAGE_SIZE]];
+    
+    __unsafe_unretained typeof(self) weakSelf = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf setPageIndex:0];
+            NSArray *heros = [[LINKHerosStore sharedInstance] fetchPage:weakSelf.pageIndex size:REQ_PAGE_SIZE];
+            [weakSelf.heros removeAllObjects];
+            [weakSelf.heros addObjectsFromArray:heros];
+            [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+        });
+    }];
+    // 上拉刷新
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            weakSelf.pageIndex ++;
+            NSArray *heros = [[LINKHerosStore sharedInstance] fetchPage:weakSelf.pageIndex size:REQ_PAGE_SIZE];
+            if (heros.count > 0) {
+                [weakSelf.heros addObjectsFromArray:heros];
+                [weakSelf.tableView reloadData];
+                if (heros.count < REQ_PAGE_SIZE) {
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                }else{
+                    [self.tableView.mj_footer endRefreshing];
+                }
+            }else {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
+        });
+    }];
+}
 
 #pragma mark - Table view data source
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -82,10 +95,8 @@
     cell.imageView.image = [UIImage imageNamed:hero.icon];
     cell.detailTextLabel.text = hero.intro;
     
-    
     // 3.覆盖数据
     //    cell.textLabel.text = [NSString stringWithFormat:@"testdata - %zd", indexPath.row];
-    NSLog(@"testData ---- %zd",indexPath.row);
     
     
     return cell;
