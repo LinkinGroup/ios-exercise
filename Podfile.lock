@@ -16,20 +16,35 @@ PODS:
     - AFNetworking/NSURLSession
   - FlatUIKit (1.6.2)
   - MaterialControls (1.0.2)
-  - SDWebImage (3.7.4):
-    - SDWebImage/Core (= 3.7.4)
-  - SDWebImage/Core (3.7.4)
+  - ReactiveCocoa (4.0.4-alpha-4):
+    - ReactiveCocoa/UI (= 4.0.4-alpha-4)
+    - Result (~> 1.0)
+  - ReactiveCocoa/Core (4.0.4-alpha-4):
+    - ReactiveCocoa/no-arc
+    - Result (~> 1.0)
+  - ReactiveCocoa/no-arc (4.0.4-alpha-4):
+    - Result (~> 1.0)
+  - ReactiveCocoa/UI (4.0.4-alpha-4):
+    - ReactiveCocoa/Core
+    - Result (~> 1.0)
+  - Result (1.0.1)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0.4)
   - FlatUIKit (~> 1.6.2)
   - MaterialControls (~> 1.0.2)
+  - ReactiveCocoa (~> 4.0.4-alpha-4)
   - SDWebImage (~> 3.7.4)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   MaterialControls: bdeeb94aa049b73f70739a5514be137d2d45c08a
-  SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  ReactiveCocoa: e459ea92099447802df20c4735e31e8139b06094
+  Result: caef80340451e1f07492fa1e89117f83613bce24
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
 COCOAPODS: 0.39.0
